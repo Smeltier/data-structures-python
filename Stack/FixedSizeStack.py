@@ -5,13 +5,13 @@ class FixedSizeStack:
         self.pointer = 0
 
     def push(self, item):
-        if self.pointer == self.max_length:
+        if self.pointer >= self.max_length:
             raise IndexError("Stack Overflow")
         self.items[self.pointer] = item
         self.pointer += 1
 
     def is_full(self):
-        return self.pointer == self.max_length
+        return self.pointer >= self.max_length
 
     def is_empty(self):
         return self.pointer == 0
