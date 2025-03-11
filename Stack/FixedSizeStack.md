@@ -74,6 +74,47 @@ Checks if an item is present in the stack.
   - `True` if the item is present in the stack.
   - `False` otherwise.
 
+## How to Import
+
+You can import the `FixedSizeStack` class directly from the GitHub repository by installing it through `git` or using it in your project directly.
+
+### Install via Git (Clone the Repository)
+
+1. Clone the repository from GitHub:
+   ```bash
+   git clone https://github.com/Smeltier/data-structures-python.git
+   ```
+
+2. Navigate to the `Stack` folder:
+   ```bash
+   cd data-structures-python/Stack
+   ```
+
+3. Import the `FixedSizeStack` class in your Python code:
+   ```python
+   from stack import FixedSizeStack
+
+   stack = FixedSizeStack(5)
+   stack.push(10)
+   stack.push(20)
+   stack.push(30)
+   print(stack.top())  # Output: 30
+   ```
+
+### Directly Use in Your Project
+
+Alternatively, you can download the `FixedSizeStack.py` file directly from the repository's `Stack` directory and import it into your project.
+
+```python
+from FixedSizeStack import FixedSizeStack
+
+stack = FixedSizeStack(5)
+stack.push(10)
+stack.push(20)
+stack.push(30)
+print(stack.top())  # Output: 30
+```
+
 ## Example Usage
 
 ```python
@@ -103,3 +144,4 @@ print(stack.contains(10))  # Output: True
 # Clearing the stack
 stack.clear()
 print(stack.is_empty())  # Output: True
+```
