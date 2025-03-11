@@ -10,6 +10,7 @@ This repository contains implementations of various data structures using Python
 ## Implemented Structures
 
 - [x] Stack
+- [ ] Set
 - [ ] Queue
 - [ ] Linked List
 - [ ] Trees
