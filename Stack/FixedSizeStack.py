@@ -17,13 +17,13 @@ class FixedSizeStack:
         return self.pointer == 0
 
     def pop(self):
-        if self.is_empty():
+        if self.pointer == 0:
             raise IndexError("Error, your stack is empty")
         self.pointer -= 1
         return self.items[self.pointer]
     
     def top(self):
-        if self.is_empty():
+        if self.pointer == 0:
             raise IndexError("Error, your stack is empty")
         return self.items[self.pointer - 1]
     
