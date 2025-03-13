@@ -1,5 +1,3 @@
----
-
 # Implementing Data Structures in Python
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue)
@@ -40,4 +38,11 @@ print(stack.pop())  # Output: 20
 
 ---
 
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more details.
+
+---
+
 **Maintainer:** [Smeltier](https://github.com/Smeltier)
+```
