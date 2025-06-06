@@ -1,3 +1,5 @@
+from typing import Optional
+
 class FixedSizeStack:
     def __init__(self, max_length = 1000):
         self.items = [0] * max_length
@@ -6,33 +8,32 @@ class FixedSizeStack:
 
     def push(self, item):
         if self.pointer >= self.max_length:
-            raise IndexError("Stack Overflow")
+            return
         self.items[self.pointer] = item
         self.pointer += 1
 
-    def is_full(self):
+    def is_full(self) -> bool:
         return self.pointer >= self.max_length
 
-    def is_empty(self):
+    def is_empty(self) -> bool:
         return self.pointer == 0
 
-    def pop(self):
+    def pop(self) -> Optional[int]:
         if self.pointer == 0:
-            raise IndexError("Error, your stack is empty")
+            return None
         self.pointer -= 1
         return self.items[self.pointer]
     
-    def top(self):
+    def top(self) -> Optional[int]:
         if self.pointer == 0:
-            raise IndexError("Error, your stack is empty")
+            return None
         return self.items[self.pointer - 1]
     
-    def size(self):
+    def size(self) -> int:
         return self.pointer
     
     def clear(self):
         self.pointer = 0
-        self.items = [0] * self.max_length
     
-    def contains(self, item):
+    def contains(self, item) -> bool:
         return item in self.items[:self.pointer]
