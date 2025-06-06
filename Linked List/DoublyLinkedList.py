@@ -1,15 +1,13 @@
-class Node:
+from typing import Optional
 
+class Node:
     def __init__(self, value):
-        
         self.value = value
         self.next = None
         self.prev = None
 
 class DoublyLinkedList:
-
     def __init__(self):
-
         self.head = None
         self.tail = None
         self._size = 0
@@ -21,7 +19,6 @@ class DoublyLinkedList:
         return self._size == 0
 
     def add_front(self, value):
-
         new_node = Node(value)
         new_node.next = self.head
 
@@ -34,7 +31,6 @@ class DoublyLinkedList:
         self.head = new_node
 
     def add_back(self, value):
-
         new_node = Node(value)
         new_node.prev = self.tail
 
@@ -47,7 +43,6 @@ class DoublyLinkedList:
         self._size += 1
 
     def remove_front(self) -> int:
-
         if not self.head:
             return None
 
@@ -63,7 +58,6 @@ class DoublyLinkedList:
         return removed_value
 
     def remove_back(self) -> int:
-
         if not self.tail:
             return None
 
@@ -78,15 +72,13 @@ class DoublyLinkedList:
         self._size -= 1    
         return removed_value
     
-    def front(self) -> int:
-
+    def front(self) -> Optional[int]:
         if self.head:
             return self.head.value
         else:
             return None
         
     def back(self) -> int:
-
         if self.tail:
             return self.tail.value
         else:
@@ -98,7 +90,7 @@ class DoublyLinkedList:
 
         while current:
             if current.value == value:
-                return True;
+                return True
             current = current.next
 
         return False
@@ -111,4 +103,5 @@ class DoublyLinkedList:
             current.next, current.prev = current.prev, current.next
             if not current.prev:
                 self.head = current
+
             current = current.prev
