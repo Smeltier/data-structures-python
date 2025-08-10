@@ -35,5 +35,5 @@ class FixedSizeStack:
     def clear(self) -> None:
         self.pointer = 0
     
-    def contains(self, item) -> bool:
+    def contains(self, item: Any) -> bool:
         return item in self.items[:self.pointer]
