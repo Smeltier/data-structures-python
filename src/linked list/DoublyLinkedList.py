@@ -1,24 +1,25 @@
-from typing import Optional
+from typing import Any
 
 class Node:
-    def __init__(self, value):
-        self.value = value
-        self.next = None
-        self.prev = None
+    def __init__(self, value: Any):
+        self.value: Any = value
+        self.next: Node = None
+        self.prev: Node = None
 
 class DoublyLinkedList:
     def __init__(self):
-        self.head = None
-        self.tail = None
-        self._size = 0
-    
+        self.head: Node = None
+        self.tail: Node = None
+        self._size: int = 0
+
     def get_size(self) -> int:
         return self._size
     
     def is_empty(self) -> bool:
         return self._size == 0
 
-    def add_front(self, value):
+    def add_front(self, value: Any):
+        new_node: Node = Node(value)
         new_node = Node(value)
         new_node.next = self.head
 
@@ -31,6 +32,7 @@ class DoublyLinkedList:
         self.head = new_node
 
     def add_back(self, value):
+        new_node: Node = Node(value)
         new_node = Node(value)
         new_node.prev = self.tail
 
@@ -46,7 +48,7 @@ class DoublyLinkedList:
         if not self.head:
             return None
 
-        removed_value = self.head.value
+        removed_value: Any = self.head.value
         self.head = self.head.next
 
         if self.head:
@@ -61,7 +63,7 @@ class DoublyLinkedList:
         if not self.tail:
             return None
 
-        removed_value = self.tail.value
+        removed_value: Any = self.tail.value
         self.tail = self.tail.prev
 
         if self.tail:
@@ -72,7 +74,7 @@ class DoublyLinkedList:
         self._size -= 1    
         return removed_value
     
-    def front(self) -> Optional[int]:
+    def front(self) -> int:
         if self.head:
             return self.head.value
         else:
