@@ -2,9 +2,9 @@ from typing import Any
 
 class FixedSizeStack:
     def __init__(self, max_length = 1000):
-        self.items: list[Any] = [0] * max_length
-        self.max_length: int = max_length
-        self.pointer: int = 0
+        self.items:      list[Any] = [0] * max_length
+        self.max_length: int       = max_length
+        self.pointer:    int       = 0
 
     def push(self, item: Any) -> None:
         if self.pointer >= self.max_length:
